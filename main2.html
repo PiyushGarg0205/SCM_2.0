@@ -4,130 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sip Smart - Premium Coffee House</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- 3D Coffee Cup -->
+    <div id="coffee-cup-container"></div>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark bg-opacity-75">
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand fs-3 fw-bold" href="#home">
-                <i class="bi bi-cup-hot-fill me-2"></i>Sip Smart
+            <a class="navbar-brand" href="#home">
+                <span class="coffee-icon">☕</span>Sip Smart
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#offers">Offers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reservation">Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn btn-warning rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#orderModal">
-                            Order Now
-                        </button>
-                    </li>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#offers" class="nav-link">Offers</a></li>
+                    <li><a href="#reservation" class="nav-link">Reservation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><button class="order-now-btn" id="orderNowBtn">Order Now</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-md-8 mx-auto text-center">
-                    <div class="welcome-container p-4 rounded shadow bg-dark bg-opacity-75 text-white">
-                        <h1 class="display-4 fw-bold mb-4">Welcome to Sip Smart!</h1>
-                        <p class="lead mb-4">
-                            Since our founding in 1950, Sip Smart has been dedicated to delivering exceptional beverages to our customers.
-                            Over the past seven decades, we have proudly served over 100 million people worldwide, becoming a trusted name in the industry.
-                            Our commitment to quality, innovation, and customer satisfaction has made us a beloved brand across the globe.
-                        </p>
-                    </div>
-                    <div class="button-container mt-4 d-flex justify-content-center gap-3">
-                        <a href="#menu" class="btn btn-warning btn-lg px-5 rounded-pill">Explore Menu</a>
-                        <button class="btn btn-outline-light btn-lg px-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#orderModal">
-                            Order Now
-                        </button>
-                    </div>
+    <section id="home" class="hero parallax-section">
+        <div class="hero-content">
+            <div class="welcome-container reveal-text">
+                <h1>Welcome to <span class="highlight">Sip Smart!</span></h1>
+                <p class="lead">
+                    Since our founding in 1950, Sip Smart has been dedicated to delivering exceptional beverages to our customers.
+                    Over the past seven decades, we have proudly served over 100 million people worldwide, becoming a trusted name in the industry.
+                </p>
+                <div class="button-container">
+                    <a href="#menu" class="btn primary-btn">Explore Menu</a>
+                    <button class="btn secondary-btn" id="heroOrderBtn">Order Now</button>
                 </div>
+            </div>
+            <div class="floating-beans">
+                <img src="https://v0.blob.com/coffee-bean-1.png" alt="" class="bean bean-1">
+                <img src="https://v0.blob.com/coffee-bean-2.png" alt="" class="bean bean-2">
+                <img src="https://v0.blob.com/coffee-bean-3.png" alt="" class="bean bean-3">
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
-    
 
     <!-- Menu Section -->
-    <section id="menu" class="py-5 bg-light">
+    <section id="menu" class="section">
         <div class="container">
-            <h2 class="text-center display-4 mb-5">Our Menu</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card">
-                        <div class="card-body">
-                            <h3 class="card-title mb-4">
-                                <i class="bi bi-cup-hot text-warning me-2"></i>
-                                Beverages
-                            </h3>
-                            <div class="menu-item">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h4>Java Chip Frappuccino</h4>
-                                    <button class="btn btn-sm btn-warning rounded-pill order-btn" data-item="Java Chip Frappuccino" data-price="388.50">
-                                        Order ₹388.50
-                                    </button>
-                                </div>
-                                <p class="text-muted">Mocha sauce and Frappuccino® chips blended with Frappuccino® roast coffee and milk and ice.</p>
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            <div class="menu-container">
+                <div class="menu-category beverages reveal-left">
+                    <div class="category-header">
+                        <h3>Beverages</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item" data-item="Java Chip Frappuccino" data-price="388.50">
+                            <div class="menu-item-content">
+                                <h4>Java Chip Frappuccino</h4>
+                                <p>Mocha sauce and Frappuccino® chips blended with Frappuccino® roast coffee and milk and ice.</p>
+                                <span class="price">₹388.50</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h4>Caffe Americano</h4>
-                                    <button class="btn btn-sm btn-warning rounded-pill order-btn" data-item="Caffe Americano" data-price="278.25">
-                                        Order ₹278.25
-                                    </button>
-                                </div>
-                                <p class="text-muted">Rich in flavour, full-bodied espresso with hot water in true European style.</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                        <div class="menu-item" data-item="Caffe Americano" data-price="278.25">
+                            <div class="menu-item-content">
+                                <h4>Caffe Americano</h4>
+                                <p>Rich in flavour, full-bodied espresso with hot water in true European style.</p>
+                                <span class="price">₹278.25</span>
                             </div>
+                            <button class="add-to-cart">+</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card">
-                        <div class="card-body">
-                            <h3 class="card-title mb-4">
-                                <i class="bi bi-cookie text-warning me-2"></i>
-                                Cookies & Desserts
-                            </h3>
-                            <div class="menu-item">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h4>Almond Butterscotch Cookie</h4>
-                                    <button class="btn btn-sm btn-warning rounded-pill order-btn" data-item="Almond Butterscotch Cookie" data-price="299.25">
-                                        Order ₹299.25
-                                    </button>
-                                </div>
-                                <p class="text-muted">A buttery cookie with a combination of crunchy almond and butterscotch.</p>
+                <div class="menu-category desserts reveal-right">
+                    <div class="category-header">
+                        <h3>Cookies & Desserts</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item" data-item="Almond Butterscotch Cookie" data-price="299.25">
+                            <div class="menu-item-content">
+                                <h4>Almond Butterscotch Cookie</h4>
+                                <p>A buttery cookie with a combination of crunchy almond and butterscotch.</p>
+                                <span class="price">₹299.25</span>
                             </div>
-                            <div class="menu-item">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h4>Red Velvet Cookie</h4>
-                                    <button class="btn btn-sm btn-warning rounded-pill order-btn" data-item="Red Velvet Cookie" data-price="204.75">
-                                        Order ₹204.75
-                                    </button>
-                                </div>
-                                <p class="text-muted">Soft, chewy crimson coloured cookie with a vanilla flavor, accented by a hint of tanginess.</p>
+                            <button class="add-to-cart">+</button>
+                        </div>
+                        <div class="menu-item" data-item="Red Velvet Cookie" data-price="204.75">
+                            <div class="menu-item-content">
+                                <h4>Red Velvet Cookie</h4>
+                                <p>Soft, chewy crimson coloured cookie with a vanilla flavor, accented by a hint of tanginess.</p>
+                                <span class="price">₹204.75</span>
                             </div>
+                            <button class="add-to-cart">+</button>
                         </div>
                     </div>
                 </div>
@@ -136,165 +135,194 @@
     </section>
 
     <!-- Offers Section -->
-    <section id="offers" class="py-5 bg-white">
+    <section id="offers" class="section parallax-section">
         <div class="container">
-            <h2 class="text-center display-4 mb-5">Special Offers</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card bg-warning bg-opacity-10">
-                        <div class="card-body text-center p-5">
-                            <i class="bi bi-gift text-warning display-1 mb-4"></i>
-                            <h3 class="card-title h2 mb-4">15% OFF</h3>
-                            <p class="lead">On all orders above ₹500</p>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2 class="section-title">Special Offers</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
                 </div>
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card bg-warning bg-opacity-10">
-                        <div class="card-body text-center p-5">
-                            <i class="bi bi-credit-card text-warning display-1 mb-4"></i>
-                            <h3 class="card-title h2 mb-4">Loyalty Card</h3>
-                            <p class="lead">Get 20% discount on orders above ₹500 when you spend more than ₹2000</p>
-                        </div>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card reveal-up">
+                    <div class="offer-icon">
+                        <span class="gift-icon">🎁</span>
                     </div>
+                    <h3>15% OFF</h3>
+                    <p>On all orders above ₹500</p>
+                    <div class="offer-shine"></div>
+                </div>
+                <div class="offer-card reveal-up" data-delay="0.2">
+                    <div class="offer-icon">
+                        <span class="card-icon">💳</span>
+                    </div>
+                    <h3>Loyalty Card</h3>
+                    <p>Get 20% discount on orders above ₹500 when you spend more than ₹2000</p>
+                    <div class="offer-shine"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reservation Section -->
-    <section id="reservation" class="py-5 bg-light">
+    <section id="reservation" class="section">
         <div class="container">
-            <h2 class="text-center display-4 mb-5">Make Reservation</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form id="reservationForm" class="card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Your Name</label>
-                                    <input type="text" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone</label>
-                                    <input type="tel" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Reservation Date</label>
-                                    <input type="date" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Starting Time</label>
-                                    <input type="time" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Number of Guests</label>
-                                    <select class="form-select" required>
-                                        <option value="">Select Number of Guests</option>
-                                        <option value="1">1 Guest</option>
-                                        <option value="2">2 Guests</option>
-                                        <option value="3">3 Guests</option>
-                                        <option value="4">4 Guests</option>
-                                        <option value="5">5 Guests</option>
-                                        <option value="6">6 Guests</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 text-center mt-4">
-                                    <button type="submit" class="btn btn-warning btn-lg rounded-pill px-5">
-                                        Make Reservation
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+            <div class="section-header">
+                <h2 class="section-title">Make Reservation</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
                 </div>
+            </div>
+            <div class="reservation-container reveal-scale">
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" required class="form-input">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" required class="form-input">
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" required class="form-input">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Reservation Date</label>
+                            <input type="date" required class="form-input">
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Starting Time</label>
+                            <input type="time" required class="form-input">
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Guests</label>
+                            <select class="form-input" required>
+                                <option value="">Select Number of Guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                            </select>
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">
+                            <span>Make Reservation</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-white">
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="text-center display-4 mb-5">Contact Us</h2>
-            <div class="row justify-content-center text-center g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card">
-                        <div class="card-body p-4">
-                            <i class="bi bi-envelope text-warning display-4 mb-3"></i>
-                            <h3 class="h4 mb-3">Email Us</h3>
-                            <p class="mb-0">
-                                <a href="mailto:sipsmart.support@gmail.com" class="text-decoration-none text-dark">
-                                    sipsmart.support@gmail.com
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
                 </div>
-                <div class="col-md-6">
-                    <div class="card h-100 menu-card">
-                        <div class="card-body p-4">
-                            <i class="bi bi-telephone text-warning display-4 mb-3"></i>
-                            <h3 class="h4 mb-3">Call Us</h3>
-                            <p class="mb-0">
-                                <a href="tel:9000800088" class="text-decoration-none text-dark">
-                                    900-080-0088
-                                </a>
-                            </p>
-                        </div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-card reveal-left">
+                    <div class="contact-icon">
+                        <span class="email-icon">✉</span>
                     </div>
+                    <h3>Email Us</h3>
+                    <a href="mailto:sipsmart.support@gmail.com" class="contact-link">
+                        sipsmart.support@gmail.com
+                    </a>
+                </div>
+                <div class="contact-card reveal-right">
+                    <div class="contact-icon">
+                        <span class="phone-icon">📞</span>
+                    </div>
+                    <h3>Call Us</h3>
+                    <a href="tel:9000800088" class="contact-link">
+                        900-080-0088
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 bg-dark text-white text-center">
+    <footer class="footer">
         <div class="container">
-            <p class="mb-0">Created By: Piyush, Kanika, Liza | © 2024 All Rights Reserved</p>
+            <p>Created By: Piyush, Kanika, Liza | © 2024 All Rights Reserved</p>
+            <div class="footer-beans">
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+            </div>
         </div>
     </footer>
 
     <!-- Order Modal -->
-    <div class="modal fade" id="orderModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Your Order</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Order</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="orderItems" class="order-items">
+                    <!-- Order items will be added here dynamically -->
                 </div>
-                <div class="modal-body">
-                    <div id="orderItems" class="mb-4">
-                        <!-- Order items will be added here dynamically -->
+                <div class="order-total">
+                    <h4>Total:</h4>
+                    <h4 id="orderTotal">₹0.00</h4>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea class="form-input" rows="3" required></textarea>
+                        <span class="focus-border"></span>
                     </div>
-                    <div class="d-flex justify-content-between border-top pt-3">
-                        <h5>Total:</h5>
-                        <h5 id="orderTotal">₹0.00</h5>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-input" required>
+                        <span class="focus-border"></span>
                     </div>
-                    <form id="orderForm" class="mt-4">
-                        <div class="mb-3">
-                            <label class="form-label">Delivery Address</label>
-                            <textarea class="form-control" rows="3" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning" id="placeOrderBtn">Place Order</button>
-                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" id="closeOrderBtn">Close</button>
+                <button class="btn primary-btn" id="placeOrderBtn">Place Order</button>
             </div>
         </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Order Placed Successfully!</h3>
+            <p>Your delicious coffee is on the way.</p>
+            <button class="btn primary-btn" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
