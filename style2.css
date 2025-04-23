@@ -1,4 +1,4 @@
-/* Enhanced Styles */
+
 :root {
   --primary-color: #d4a373;
   --secondary-color: #3c2f2f;
@@ -11,7 +11,7 @@
   --border-radius: 16px;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -52,7 +52,7 @@ ul {
   padding: 0 20px;
 }
 
-/* Enhanced Cursor */
+/* Enhanced cursor */
 .cursor {
   position: fixed;
   width: 12px;
