@@ -34,19 +34,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Custom cursor
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
+    // Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+document.addEventListener('mousemove', function(e) {
+    // Update cursor position immediately with no delay
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
     
-    document.addEventListener('mousemove', function(e) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        
-        setTimeout(function() {
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        }, 100);
+    // Use requestAnimationFrame for smoother animation of the follower
+    requestAnimationFrame(function() {
+        cursorFollower.style.left = e.clientX + 'px';
+        cursorFollower.style.top = e.clientY + 'px';
+    });
+});
+
+// Add cursor effects for links and buttons
+document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        cursor.classList.add('cursor-hover');
+        cursorFollower.classList.add('follower-hover');
     });
     
+    item.addEventListener('mouseleave', function() {
+        cursor.classList.remove('cursor-hover');
+        cursorFollower.classList.remove('follower-hover');
+    });
+});
     // Reveal animations
     const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up, .reveal-scale');
     
