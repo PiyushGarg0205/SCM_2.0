@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip Smart - Loyalty Program</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="loyalty.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="coffee-icon">☕</span>Sip Smart
+            </a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+                    <li><a href="index.html#offers" class="nav-link">Offers</a></li>
+                    <li><a href="subscription.html" class="nav-link">Subscription</a></li>
+                    <li><a href="loyalty.html" class="nav-link active">Loyalty</a></li>
+                    <li><a href="index.html#reservation" class="nav-link">Reservation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="login.html" class="nav-link">Sign Up</a></li>
+                    <li><button class="order-now-btn" id="orderNowBtn">Order Now</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loyalty Hero Section -->
+    <section class="loyalty-hero parallax-section">
+        <div class="container">
+            <div class="loyalty-hero-content reveal-text">
+                <h1>Sip Smart <span class="highlight">Loyalty</span> Program</h1>
+                <p class="lead">Earn points with every purchase, unlock rewards, and collect achievement badges.</p>
+                <div class="button-container">
+                    <a href="#loyalty-points" class="btn primary-btn">Learn About Points</a>
+                    <a href="#rewards-badges" class="btn secondary-btn">View Badges</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Points Section -->
+    <section id="loyalty-points" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loyalty Points System</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="loyalty-card reveal-scale">
+                <div class="loyalty-card-inner">
+                    <div class="loyalty-card-front">
+                        <div class="loyalty-card-logo">
+                            <span class="coffee-icon">☕</span>Sip Smart
+                        </div>
+                        <div class="loyalty-card-title">PREMIUM MEMBER</div>
+                        <div class="loyalty-card-member">
+                            <div class="member-name">Your Name</div>
+                            <div class="member-since">Member since: 2024</div>
+                        </div>
+                        <div class="loyalty-card-number">
+                            <span>•••• •••• •••• 1234</span>
+                        </div>
+                    </div>
+                    <div class="loyalty-card-back">
+                        <div class="loyalty-stamps">
+                            <div class="stamp active">☕</div>
+                            <div class="stamp active">☕</div>
+                            <div class="stamp active">☕</div>
+                            <div class="stamp">4</div>
+                            <div class="stamp">5</div>
+                            <div class="stamp">6</div>
+                            <div class="stamp">7</div>
+                            <div class="stamp">8</div>
+                            <div class="stamp">9</div>
+                            <div class="stamp">10</div>
+                        </div>
+                        <div class="loyalty-card-info">
+                            <p>Buy 10 coffees, get 1 free!</p>
+                            <p>Scan this card with every purchase</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loyalty-info">
+                <div class="loyalty-info-card reveal-left">
+                    <div class="info-icon">
+                        <span class="info-emoji">🏆</span>
+                    </div>
+                    <h3>Earn Points</h3>
+                    <p>Earn 10 points for every ₹100 spent. Double points on your birthday and special events!</p>
+                </div>
+                
+                <div class="loyalty-info-card reveal-up">
+                    <div class="info-icon">
+                        <span class="info-emoji">🎁</span>
+                    </div>
+                    <h3>Redeem Rewards</h3>
+                    <p>Use your points for free drinks, food items, or exclusive merchandise.</p>
+                </div>
+                
+                <div class="loyalty-info-card reveal-right">
+                    <div class="info-icon">
+                        <span class="info-emoji">⭐</span>
+                    </div>
+                    <h3>Member Benefits</h3>
+                    <p>Enjoy exclusive offers, early access to new products, and special member-only events.</p>
+                </div>
+            </div>
+            
+            <div class="rewards-table reveal-up">
+                <h3>Rewards Redemption Chart</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Points</th>
+                            <th>Reward</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>Free Regular Coffee</td>
+                        </tr>
+                        <tr>
+                            <td>150</td>
+                            <td>Free Specialty Coffee</td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>Free Pastry or Dessert</td>
+                        </tr>
+                        <tr>
+                            <td>300</td>
+                            <td>Free Breakfast Combo</td>
+                        </tr>
+                        <tr>
+                            <td>500</td>
+                            <td>Sip Smart Branded Mug</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>250g Premium Coffee Beans</td>
+                        </tr>
+                        <tr>
+                            <td>2000</td>
+                            <td>Coffee Brewing Kit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Badges Section -->
+    <section id="rewards-badges" class="section badges-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Rewards Badges</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+                <p class="section-subtitle">Collect achievement badges by completing various coffee-related challenges!</p>
+            </div>
+            
+            <div class="badges-container">
+                <div class="badge-card reveal-up" data-delay="0.1">
+                    <div class="badge-icon active">
+                        <span class="badge-emoji">🥇</span>
+                    </div>
+                    <h3>First Purchase</h3>
+                    <p>Made your first purchase at Sip Smart</p>
+                    <div class="badge-status">Unlocked</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.2">
+                    <div class="badge-icon active">
+                        <span class="badge-emoji">🔄</span>
+                    </div>
+                    <h3>Regular Customer</h3>
+                    <p>Visited 5 times in a month</p>
+                    <div class="badge-status">Unlocked</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.3">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">🌍</span>
+                    </div>
+                    <h3>World Explorer</h3>
+                    <p>Tried coffee beans from 5 different regions</p>
+                    <div class="badge-status">2/5 Completed</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.4">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">🧪</span>
+                    </div>
+                    <h3>Experimenter</h3>
+                    <p>Tried 10 different drinks from our menu</p>
+                    <div class="badge-status">4/10 Completed</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.5">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">🌅</span>
+                    </div>
+                    <h3>Early Bird</h3>
+                    <p>Made 5 purchases before 8 AM</p>
+                    <div class="badge-status">1/5 Completed</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.6">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">🎂</span>
+                    </div>
+                    <h3>Birthday Celebration</h3>
+                    <p>Visited us on your birthday</p>
+                    <div class="badge-status">Not Started</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.7">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">👑</span>
+                    </div>
+                    <h3>Coffee Royalty</h3>
+                    <p>Spent over ₹10,000 at Sip Smart</p>
+                    <div class="badge-status">₹3,450/₹10,000</div>
+                </div>
+                
+                <div class="badge-card reveal-up" data-delay="0.8">
+                    <div class="badge-icon locked">
+                        <span class="badge-emoji">🌟</span>
+                    </div>
+                    <h3>Social Butterfly</h3>
+                    <p>Shared Sip Smart on social media 3 times</p>
+                    <div class="badge-status">1/3 Completed</div>
+                </div>
+            </div>
+            
+            <div class="badges-cta reveal-scale">
+                <h3>Ready to start collecting badges?</h3>
+                <p>Sign up for our loyalty program today and start earning points and badges with every purchase!</p>
+                <button class="btn primary-btn" id="joinLoyaltyBtn">Join Loyalty Program</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join Section -->
+    <section class="section join-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Join</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="join-steps">
+                <div class="join-step reveal-left">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up</h3>
+                    <p>Create an account online or ask our staff for a loyalty card in-store.</p>
+                </div>
+                
+                <div class="join-step reveal-left" data-delay="0.2">
+                    <div class="step-number">2</div>
+                    <h3>Make Purchases</h3>
+                    <p>Present your loyalty card or account details with every purchase to earn points.</p>
+                </div>
+                
+                <div class="join-step reveal-left" data-delay="0.4">
+                    <div class="step-number">3</div>
+                    <h3>Earn & Redeem</h3>
+                    <p>Accumulate points and redeem them for rewards whenever you're ready.</p>
+                </div>
+            </div>
+            
+            <div class="join-form-container reveal-scale">
+                <h3>Join Our Loyalty Program</h3>
+                <form id="loyaltyForm" class="loyalty-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-input" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-input" required>
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-input" required>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth</label>
+                            <input type="date" class="form-input" required>
+                            <span class="focus-border"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-custom"></span>
+                            I agree to the terms and conditions of the Sip Smart Loyalty Program
+                        </label>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">
+                            <span>Join Now</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="loyaltySuccessModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Welcome to Sip Smart Loyalty!</h3>
+            <p>You've successfully joined our loyalty program. Start earning points with your next purchase!</p>
+            <button class="btn primary-btn" id="closeLoyaltySuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Created By: Piyush, Lakshay, Parth, Piyush Prajapati, Jashan | © 2024 All Rights Reserved</p>
+            <div class="footer-beans">
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+    <script src="loyalty.js"></script>
+</body>
+</html>

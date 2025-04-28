@@ -1,0 +1,421 @@
+/* Subscription Page Styles */
+
+/* Hero Section */
+.subscription-hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("/placeholder.svg?height=1080&width=1920")
+      no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--light-color);
+  }
+  
+  .subscription-hero-content {
+    text-align: center;
+    max-width: 900px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+    background: rgba(28, 28, 28, 0.85);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards 0.5s;
+  }
+  
+  .subscription-hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Subscription Plans */
+  .subscription-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .plan-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 550px;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-15px) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plan-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    padding: 8px 30px;
+    font-weight: 700;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plan-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(212, 163, 115, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+  }
+  
+  .plan-emoji {
+    font-size: 2.5rem;
+  }
+  
+  .plan-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+  
+  .plan-price {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .price-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+  }
+  
+  .price-period {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .plan-features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+  }
+  
+  .plan-features li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+    position: relative;
+    padding-left: 30px;
+  }
+  
+  .plan-features li:last-child {
+    border-bottom: none;
+  }
+  
+  .plan-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+  
+  .subscribe-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* How It Works Section */
+  .subscription-how-it-works {
+    background: linear-gradient(135deg, #f5e6cc, var(--light-color));
+  }
+  
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .step-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+  }
+  
+  .step-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(255, 190, 11, 0.4);
+  }
+  
+  .step-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(212, 163, 115, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 25px;
+  }
+  
+  .step-emoji {
+    font-size: 2rem;
+  }
+  
+  .step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+  }
+  
+  .step-card p {
+    color: #666;
+  }
+  
+  /* Testimonials Section */
+  .testimonials-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("/placeholder.svg?height=1080&width=1920")
+      no-repeat center center / cover;
+    color: var(--light-color);
+    padding: 80px 0;
+  }
+  
+  .testimonials-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .testimonial-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    display: none;
+    transition: all 0.5s ease;
+  }
+  
+  .testimonial-card.active {
+    display: block;
+    animation: fadeIn 0.8s;
+  }
+  
+  .testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+  }
+  
+  .testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .testimonial-content p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.8;
+  }
+  
+  .testimonial-author h4 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+  }
+  
+  .testimonial-author span {
+    color: #888;
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  .testimonial-dots {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .dot.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+  }
+  
+  .testimonial-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+  }
+  
+  .testimonial-btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.1);
+  }
+  
+  /* FAQ Section */
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .faq-item {
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(212, 163, 115, 0.1);
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+  }
+  
+  .faq-toggle {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+  }
+  
+  .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+  
+  .faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 20px;
+  }
+  
+  /* Subscription Modal */
+  .subscription-form {
+    margin-top: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .subscription-hero h1 {
+      font-size: 3rem;
+    }
+  
+    .subscription-plans {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 50px auto 0;
+    }
+  
+    .steps-container {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 50px auto 0;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .subscription-hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .testimonial-card {
+      padding: 20px;
+    }
+  
+    .plan-card,
+    .step-card {
+      padding: 20px;
+    }
+  }
+  
