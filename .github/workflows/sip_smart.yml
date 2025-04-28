@@ -1,5 +1,4 @@
 name: 🚀 Deploy & Validate Sip Smart Website
-
 on:
   push:
     branches:
@@ -8,29 +7,23 @@ on:
     branches:
       - master
   workflow_dispatch:  # <-- Added manual trigger option
-
 jobs:
   greet-on-pr:
     name: "Greet on Pull Request"
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
-
     steps:
       - name: Say thanks!
         run: echo "☕ Thank you for contributing to Sip Smart Coffee House Website!"
-
   validate-html:
     name: "Validate HTML Files"
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Install w3c-validator-cli
+      - name: Install Dependencies
         run: |
-          npm install -g w3c-validator-cli
-
-      - name: Validate HTML Files
+          npm install -g html-validator-cli
+      - name: Validate HTML
         run: |
-          w3c-validator-cli **/*.html
+          html-validator --file "**/*.html" --verbose
