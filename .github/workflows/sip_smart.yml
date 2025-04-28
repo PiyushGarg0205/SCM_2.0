@@ -31,4 +31,4 @@ jobs:
         uses: Cyb3r-Jak3/html5validator-action@v0.4.1
         with:
           root: .
-          options: "--ignore-repeated-ids --ignore-missing-doctype"
+          args: "--ignore-repeated-ids --ignore-missing-doctype"
