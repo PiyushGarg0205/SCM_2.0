@@ -83,3 +83,41 @@
             color: white;
             transition: var(--transition);
         }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="main2.html">
+                <span class="coffee-icon">☕</span>Sip Smart
+            </a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="main2.html#home" class="nav-link">Home</a></li>
+                    <li><a href="main2.html#menu" class="nav-link">Menu</a></li>
+                    <li><a href="main2.html#offers" class="nav-link">Offers</a></li>
+                    <li><a href="main2.html#reservation" class="nav-link">Reservation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><button class="order-now-btn" id="orderNowBtn">Order Now</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
