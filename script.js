@@ -1,4 +1,5 @@
 // Reveal animations for elements
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize particles.js if available
     if (typeof particlesJS !== 'undefined') {
@@ -34,34 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Custom cursor
-    // Custom cursor
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
 
-document.addEventListener('mousemove', function(e) {
-    // Update cursor position immediately with no delay
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    // Use requestAnimationFrame for smoother animation of the follower
-    requestAnimationFrame(function() {
-        cursorFollower.style.left = e.clientX + 'px';
-        cursorFollower.style.top = e.clientY + 'px';
+    document.addEventListener('mousemove', function(e) {
+        // Update cursor position immediately with no delay
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        // Use requestAnimationFrame for smoother animation of the follower
+        requestAnimationFrame(function() {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        });
     });
-});
 
-// Add cursor effects for links and buttons
-document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        cursor.classList.add('cursor-hover');
-        cursorFollower.classList.add('follower-hover');
+    // Add cursor effects for links and buttons
+    document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            cursor.classList.add('cursor-hover');
+            cursorFollower.classList.add('follower-hover');
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            cursor.classList.remove('cursor-hover');
+            cursorFollower.classList.remove('follower-hover');
+        });
     });
-    
-    item.addEventListener('mouseleave', function() {
-        cursor.classList.remove('cursor-hover');
-        cursorFollower.classList.remove('follower-hover');
-    });
-});
+        
     // Reveal animations
     const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up, .reveal-scale');
     
@@ -123,6 +124,9 @@ document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
     const successModal = document.getElementById('successModal');
     const closeSuccessBtn = document.getElementById('closeSuccessBtn');
     
+    // Get all close modal buttons (including the × button)
+    const closeModalButtons = document.querySelectorAll('.close-modal');
+    
     function openOrderModal() {
         orderModal.classList.add('show');
     }
@@ -140,11 +144,23 @@ document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
         successModal.classList.remove('show');
     }
     
+    // Set up event listeners for buttons
     if (orderNowBtn) orderNowBtn.addEventListener('click', openOrderModal);
     if (heroOrderBtn) heroOrderBtn.addEventListener('click', openOrderModal);
     if (closeOrderBtn) closeOrderBtn.addEventListener('click', closeOrderModal);
     if (placeOrderBtn) placeOrderBtn.addEventListener('click', openSuccessModal);
     if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeSuccessModal);
+    
+    // Add event listeners to all close modal buttons
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Determine which modal to close based on closest parent modal
+            const modal = this.closest('.modal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        });
+    });
     
     // Add to cart functionality
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -244,6 +260,16 @@ document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Close modals when clicking outside the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target === orderModal) {
+            closeOrderModal();
+        }
+        if (event.target === successModal) {
+            closeSuccessModal();
         }
     });
 });
