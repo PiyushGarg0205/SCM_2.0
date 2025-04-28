@@ -3,10 +3,11 @@ name: 🚀 Deploy & Validate Sip Smart Website
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
+  workflow_dispatch:  # <-- Added manual trigger option
 
 jobs:
   greet-on-pr:
@@ -31,4 +32,3 @@ jobs:
         with:
           root: .
           options: "--ignore-repeated-ids --ignore-missing-doctype"
-
