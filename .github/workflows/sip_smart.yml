@@ -1,0 +1,29 @@
+name: 🚀 Deploy & Validate Sip Smart Website
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:  # <-- Added manual trigger option
+jobs:
+  greet-on-pr:
+    name: "Greet on Pull Request"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Say thanks!
+        run: echo "☕ Thank you for contributing to Sip Smart Coffee House Website!"
+  validate-html:
+    name: "Validate HTML Files"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          npm install -g html-validator-cli
+      - name: Find and Validate HTML Files
+        run: |
+          find . -name "*.html" -type f | xargs -I{} html-validator --file {} --verbose
