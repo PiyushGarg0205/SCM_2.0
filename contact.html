@@ -268,3 +268,33 @@
             </div>
         </div>
     </div>
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>We'll get back to you as soon as possible.</p>
+            <button class="btn primary-btn" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successModal').classList.add('show');
+        });
+        
+        document.getElementById('closeSuccessBtn').addEventListener('click', function() {
+            document.getElementById('successModal').classList.remove('show');
+        });
+    </script>
+</body>
+</html>
