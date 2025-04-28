@@ -214,3 +214,57 @@
                         </form>
                     </div>
                 </div>
+
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369674847032!3d40.71277927933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2sCoffee%20Shop!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Created By: Piyush, Lakshay, Parth, Piyush Prajapati, Jashan | © 2024 All Rights Reserved</p>
+            <div class="footer-beans">
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Order</h3>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <div id="orderItems" class="order-items">
+                    <!-- Order items will be added here dynamically -->
+                </div>
+                <div class="order-total">
+                    <h4>Total:</h4>
+                    <h4 id="orderTotal">₹0.00</h4>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea class="form-input" rows="3" required></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-input" required>
+                        <span class="focus-border"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" id="closeOrderBtn">Close</button>
+                <button class="btn primary-btn" id="placeOrderBtn">Place Order</button>
+            </div>
+        </div>
+    </div>
