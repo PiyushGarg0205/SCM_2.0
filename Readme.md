@@ -67,4 +67,4 @@ It includes:
 
 ---
 
-Made with love by **Piyush, Lakshay, Parth, and Piyush Prajapati** ☕
+Made with love by **Piyush, Lakshay, Parth, Piyush Prajapati and Jashan** ☕
