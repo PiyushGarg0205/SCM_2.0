@@ -10,6 +10,54 @@
   --shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   --border-radius: 16px;
 }
+/* Add to style2.css for game-related styles */
+
+/* Game icon animation in navbar */
+.game-icon {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.bounce {
+  animation: bounce 1s;
+}
+
+/* Pulse animation for game link in offers */
+@keyframes pulse-animation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-animation {
+  animation: pulse-animation 1s infinite;
+}
+
+/* Extra styles for the new offer card */
+.offer-card:nth-child(3) {
+  background: linear-gradient(135deg, #ffffff, #f5e6cc);
+  border: 2px solid var(--accent-color);
+}
+
+.offer-card:nth-child(3) .offer-icon {
+  background: rgba(255, 190, 11, 0.2);
+}
+
+.offer-card:nth-child(3) .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* Active navigation link style */
+.nav-link.active {
+  color: var(--accent-color);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
 
 *{
   margin: 0;

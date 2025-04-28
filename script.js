@@ -24,6 +24,48 @@ document.addEventListener('DOMContentLoaded', function() {
             retina_detect: true
         });
     }
+    // Add to the DOMContentLoaded event listener in script.js
+
+// These are the existing event listeners for the navigation menu
+document.querySelectorAll('a, button, .menu-toggle').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        cursor.classList.add('cursor-hover');
+        cursorFollower.classList.add('follower-hover');
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        cursor.classList.remove('cursor-hover');
+        cursorFollower.classList.remove('follower-hover');
+    });
+});
+
+// Add animation for the game link in offers section
+const gameLink = document.querySelector('.offer-card a[href="game.html"]');
+if (gameLink) {
+    gameLink.addEventListener('mouseenter', function() {
+        this.classList.add('pulse-animation');
+    });
+    
+    gameLink.addEventListener('mouseleave', function() {
+        this.classList.remove('pulse-animation');
+    });
+}
+
+// Add a small animation to the Game nav link
+const gameNavLink = document.querySelector('.navbar-menu a[href="game.html"]');
+if (gameNavLink) {
+    gameNavLink.innerHTML += ' <span class="game-icon">🎮</span>';
+    
+    setInterval(() => {
+        const gameIcon = gameNavLink.querySelector('.game-icon');
+        if (gameIcon) {
+            gameIcon.classList.add('bounce');
+            setTimeout(() => {
+                gameIcon.classList.remove('bounce');
+            }, 1000);
+        }
+    }, 5000);
+}
     
     // Initialize 3D coffee cup if applicable
     if (typeof init3DCoffeeCup === 'function') {

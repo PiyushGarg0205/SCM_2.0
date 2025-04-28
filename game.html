@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Memory Match - Sip Smart</title>
+    <style>
+        :root {
+            --primary-color: #3c2f2f;
+            --secondary-color: #d4a373;
+            --accent-color: #e9c46a;
+            --light-color: #f5ebe0;
+            --dark-color: #1a1a1a;
+            --text-color: #333;
+            --border-radius: 10px;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f3eb;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .game-title {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--primary-color);
+        }
+
+        .game-container {
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .game-intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #c69c6d;
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .game-stat {
+            background: var(--light-color);
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .memory-card {
+            height: 120px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            cursor: pointer;
+        }
+
+        .memory-card.flip {
+            transform: rotateY(180deg);
+        }
+
+        .front-face, .back-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 8px;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .front-face {
+            background: linear-gradient(135deg, #d4a373, #a87c50);
+            transform: rotateY(180deg);
+            color: white;
+        }
+
+        .back-face {
+            background: linear-gradient(135deg, #3c2f2f, #1a1a1a);
+            color: var(--accent-color);
+        }
+
+        .game-over {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .game-over-content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .game-over h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .game-over p {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .memory-game {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .game-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .memory-game {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>☕ Sip Smart</h1>
+    </header>
+
+    <div class="container">
+        <h1 class="game-title">Coffee Memory Match</h1>
+        
+        <div class="game-container">
+            <div class="game-intro">
+                <h2>Test Your Coffee Memory!</h2>
+                <p>Match pairs of coffee items to win rewards. The fewer moves you make, the bigger your discount!</p>
+            </div>
+            
+            <div class="game-controls">
+                <button class="btn" id="restart-btn">New Game</button>
+                <div class="game-stats">
+                    <div class="game-stat">Moves: <span id="move-count">0</span></div>
+                    <div class="game-stat">Matches: <span id="match-count">0</span></div>
+                    <div class="game-stat">Time: <span id="time-count">0s</span></div>
+                </div>
+            </div>
+            
+            <div class="memory-game" id="memory-game">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </div>
+        
+        <footer>
+            <p>Coffee Memory Match Game | © 2025 All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <div class="game-over" id="game-over-modal">
+        <div class="game-over-content">
+            <h2>Congratulations!</h2>
+            <p>You completed the game in <span id="final-moves">0</span> moves and <span id="final-time">0</span> seconds!</p>
+            <div>
+                <h3>You've earned a <span id="discount-percent">10</span>% discount on your next order!</h3>
+                <p>Use code: <strong id="discount-code">COFFEE10</strong></p>
+            </div>
+            <div class="button-container">
+                <button class="btn" id="play-again-btn">Play Again</button>
+                <button class="btn" id="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all necessary DOM elements
+            const memoryGame = document.getElementById('memory-game');
+            const moveCountEl = document.getElementById('move-count');
+            const matchCountEl = document.getElementById('match-count');
+            const timeCountEl = document.getElementById('time-count');
+            const restartBtn = document.getElementById('restart-btn');
+            const gameOverModal = document.getElementById('game-over-modal');
+            const finalMovesEl = document.getElementById('final-moves');
+            const finalTimeEl = document.getElementById('final-time');
+            const discountPercentEl = document.getElementById('discount-percent');
+            const discountCodeEl = document.getElementById('discount-code');
+            const playAgainBtn = document.getElementById('play-again-btn');
+            const closeBtn = document.getElementById('close-btn');
+
+            // Game variables
+            let hasFlippedCard = false;
+            let lockBoard = false;
+            let firstCard, secondCard;
+            let moveCount = 0;
+            let matchCount = 0;
+            let gameTimer;
+            let gameTime = 0;
+            const totalPairs = 6;
+            
+            // Coffee-themed emojis for cards
+            const coffeeEmojis = ['☕', '🍵', '🧋', '🍰', '🍩', '🧁'];
+            
+            // Initialize game
+            createCards();
+            
+            // Create and set up the memory cards
+            function createCards() {
+                // Reset game state
+                memoryGame.innerHTML = '';
+                moveCount = 0;
+                matchCount = 0;
+                gameTime = 0;
+                moveCountEl.textContent = '0';
+                matchCountEl.textContent = '0';
+                timeCountEl.textContent = '0s';
+                
+                // Clear previous timer and start new one
+                clearInterval(gameTimer);
+                gameTimer = setInterval(() => {
+                    gameTime++;
+                    timeCountEl.textContent = `${gameTime}s`;
+                }, 1000);
+                
+                // Create a pair for each emoji and shuffle
+                const emojiPairs = [...coffeeEmojis, ...coffeeEmojis];
+                emojiPairs.sort(() => 0.5 - Math.random());
+                
+                // Create card elements
+                emojiPairs.forEach(emoji => {
+                    const card = document.createElement('div');
+                    card.classList.add('memory-card');
+                    card.dataset.value = emoji;
+                    
+                    // Create front and back faces
+                    const frontFace = document.createElement('div');
+                    frontFace.classList.add('front-face');
+                    frontFace.textContent = emoji;
+                    
+                    const backFace = document.createElement('div');
+                    backFace.classList.add('back-face');
+                    backFace.textContent = '☕';
+                    
+                    // Add faces to card
+                    card.appendChild(frontFace);
+                    card.appendChild(backFace);
+                    
+                    // Add click event
+                    card.addEventListener('click', flipCard);
+                    
+                    // Add to game board
+                    memoryGame.appendChild(card);
+                });
+            }
+            
+            // Handle card flip
+            function flipCard() {
+                if (lockBoard) return;
+                if (this === firstCard) return;
+                
+                this.classList.add('flip');
+                
+                if (!hasFlippedCard) {
+                    // First card flip
+                    hasFlippedCard = true;
+                    firstCard = this;
+                    return;
+                }
+                
+                // Second card flip
+                secondCard = this;
+                moveCount++;
+                moveCountEl.textContent = moveCount;
+                
+                checkForMatch();
+            }
+            
+            // Check if cards match
+            function checkForMatch() {
+                const isMatch = firstCard.dataset.value === secondCard.dataset.value;
+                
+                if (isMatch) {
+                    disableCards();
+                    matchCount++;
+                    matchCountEl.textContent = matchCount;
+                    
+                    // Check if game is complete
+                    if (matchCount === totalPairs) {
+                        setTimeout(gameOver, 1000);
+                    }
+                } else {
+                    unflipCards();
+                }
+            }
+            
+            // Disable matched cards
+            function disableCards() {
+                firstCard.removeEventListener('click', flipCard);
+                secondCard.removeEventListener('click', flipCard);
+                resetBoard();
+            }
+            
+            // Unflip non-matching cards
+            function unflipCards() {
+                lockBoard = true;
+                
+                setTimeout(() => {
+                    firstCard.classList.remove('flip');
+                    secondCard.classList.remove('flip');
+                    resetBoard();
+                }, 1000);
+            }
+            
+            // Reset board after each turn
+            function resetBoard() {
+                [hasFlippedCard, lockBoard] = [false, false];
+                [firstCard, secondCard] = [null, null];
+            }
+            
+            // Game over
+            function gameOver() {
+                clearInterval(gameTimer);
+                
+                // Set final stats
+                finalMovesEl.textContent = moveCount;
+                finalTimeEl.textContent = gameTime;
+                
+                // Calculate discount based on move count
+                let discount = 5;
+                let code = 'COFFEE5';
+                
+                if (moveCount < 15) {
+                    discount = 20;
+                    code = 'COFFEE20';
+                } else if (moveCount < 20) {
+                    discount = 15;
+                    code = 'COFFEE15';
+                } else if (moveCount < 25) {
+                    discount = 10;
+                    code = 'COFFEE10';
+                }
+                
+                discountPercentEl.textContent = discount;
+                discountCodeEl.textContent = code;
+                
+                // Show modal
+                gameOverModal.style.display = 'flex';
+            }
+            
+            // Event listeners
+            restartBtn.addEventListener('click', createCards);
+            
+            playAgainBtn.addEventListener('click', function() {
+                gameOverModal.style.display = 'none';
+                createCards();
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                gameOverModal.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
