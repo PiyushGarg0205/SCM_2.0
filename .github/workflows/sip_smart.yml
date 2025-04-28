@@ -24,6 +24,6 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install -g html-validator-cli
-      - name: Validate HTML
+      - name: Find and Validate HTML Files
         run: |
-          html-validator --file "**/*.html" --verbose
+          find . -name "*.html" -type f | xargs -I{} html-validator --file {} --verbose
