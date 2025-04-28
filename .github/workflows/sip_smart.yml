@@ -1,0 +1,35 @@
+name: 🚀 Deploy & Validate Sip Smart Website
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  greet-on-pr:
+    name: "Greet on Pull Request"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Say thanks!
+        run: echo "☕ Thank you for contributing to Sip Smart Coffee House Website!"
+
+  validate-html:
+    name: "Validate HTML Files"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v0.4.1
+        with:
+          root: .
+          options: "--ignore-repeated-ids --ignore-missing-doctype"
+
+  # (Optional) You can add CSS and JS linters later too if needed
