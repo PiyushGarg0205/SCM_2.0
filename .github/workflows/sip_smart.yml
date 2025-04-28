@@ -32,3 +32,6 @@ jobs:
         with:
           root: .
           args: "--ignore-repeated-ids --ignore-missing-doctype"
+          log_level: WARNING
+          css: false
+          action_debug: false
