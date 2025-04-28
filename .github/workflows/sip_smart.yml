@@ -32,4 +32,3 @@ jobs:
           root: .
           options: "--ignore-repeated-ids --ignore-missing-doctype"
 
-  # (Optional) You can add CSS and JS linters later too if needed
