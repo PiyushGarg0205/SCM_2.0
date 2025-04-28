@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip Smart - Subscription Plans</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="subscription.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="coffee-icon">☕</span>Sip Smart
+            </a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+                    <li><a href="index.html#offers" class="nav-link">Offers</a></li>
+                    <li><a href="subscription.html" class="nav-link active">Subscription</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="index.html#reservation" class="nav-link">Reservation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="login.html" class="nav-link">Sign Up</a></li>
+                    <li><button class="order-now-btn" id="orderNowBtn">Order Now</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Subscription Hero Section -->
+    <section class="subscription-hero parallax-section">
+        <div class="container">
+            <div class="subscription-hero-content reveal-text">
+                <h1>Coffee <span class="highlight">Subscription</span> Plans</h1>
+                <p class="lead">Never run out of your favorite coffee. Get premium beans delivered to your doorstep on your schedule.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Plan</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="subscription-plans">
+                <!-- Weekly Plan -->
+                <div class="plan-card reveal-left">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-icon">
+                        <span class="plan-emoji">🌱</span>
+                    </div>
+                    <h3>Weekly Essentials</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">₹499</span>
+                        <span class="price-period">/week</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>250g premium coffee beans</li>
+                        <li>Weekly delivery</li>
+                        <li>Change beans anytime</li>
+                        <li>Skip or pause deliveries</li>
+                        <li>Brewing guide included</li>
+                    </ul>
+                    <button class="btn primary-btn subscribe-btn" data-plan="weekly">Subscribe Now</button>
+                </div>
+                
+                <!-- Bi-Weekly Plan -->
+                <div class="plan-card reveal-up">
+                    <div class="plan-icon">
+                        <span class="plan-emoji">🌿</span>
+                    </div>
+                    <h3>Bi-Weekly Delight</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">₹899</span>
+                        <span class="price-period">/2 weeks</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>500g premium coffee beans</li>
+                        <li>Delivery every 2 weeks</li>
+                        <li>Change beans anytime</li>
+                        <li>Skip or pause deliveries</li>
+                        <li>Brewing guide included</li>
+                        <li>10% discount on accessories</li>
+                    </ul>
+                    <button class="btn primary-btn subscribe-btn" data-plan="biweekly">Subscribe Now</button>
+                </div>
+                
+                <!-- Monthly Plan -->
+                <div class="plan-card reveal-right">
+                    <div class="plan-badge">Best Value</div>
+                    <div class="plan-icon">
+                        <span class="plan-emoji">☕</span>
+                    </div>
+                    <h3>Monthly Explorer</h3>
+                    <div class="plan-price">
+                        <span class="price-amount">₹1599</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>1kg premium coffee beans</li>
+                        <li>Monthly delivery</li>
+                        <li>Rotating selection of beans</li>
+                        <li>Skip or pause deliveries</li>
+                        <li>Premium brewing guide</li>
+                        <li>15% discount on accessories</li>
+                        <li>Free coffee mug with first delivery</li>
+                    </ul>
+                    <button class="btn primary-btn subscribe-btn" data-plan="monthly">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section subscription-how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card reveal-up" data-delay="0.1">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <span class="step-emoji">🔍</span>
+                    </div>
+                    <h3>Choose Your Plan</h3>
+                    <p>Select a subscription plan that fits your coffee consumption.</p>
+                </div>
+                
+                <div class="step-card reveal-up" data-delay="0.2">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <span class="step-emoji">☕</span>
+                    </div>
+                    <h3>Select Your Beans</h3>
+                    <p>Choose from our selection of premium coffee beans or let us surprise you.</p>
+                </div>
+                
+                <div class="step-card reveal-up" data-delay="0.3">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <span class="step-emoji">📦</span>
+                    </div>
+                    <h3>Receive Your Coffee</h3>
+                    <p>Get freshly roasted beans delivered right to your doorstep.</p>
+                </div>
+                
+                <div class="step-card reveal-up" data-delay="0.4">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <span class="step-emoji">🛠️</span>
+                    </div>
+                    <h3>Manage Your Subscription</h3>
+                    <p>Easily pause, skip, or modify your subscription anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Subscribers Say</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-avatar">
+                        <img src="/placeholder.svg?height=80&width=80" alt="Customer Avatar">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"I've been a subscriber for 6 months now, and the quality of coffee is consistently excellent. The weekly delivery fits perfectly with my consumption!"</p>
+                        <div class="testimonial-author">
+                            <h4>Priya Sharma</h4>
+                            <span>Weekly Subscriber</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="/placeholder.svg?height=80&width=80" alt="Customer Avatar">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The monthly explorer plan is perfect for me. I love trying new beans each month, and the brewing guide has improved my coffee game significantly!"</p>
+                        <div class="testimonial-author">
+                            <h4>Rahul Mehta</h4>
+                            <span>Monthly Subscriber</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="/placeholder.svg?height=80&width=80" alt="Customer Avatar">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The flexibility to pause my subscription when I travel is fantastic. And the beans are always fresh - you can smell it as soon as you open the package!"</p>
+                        <div class="testimonial-author">
+                            <h4>Ananya Patel</h4>
+                            <span>Bi-Weekly Subscriber</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev">❮</button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <button class="testimonial-btn next">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item reveal-left">
+                    <div class="faq-question">
+                        <h3>How fresh are the coffee beans?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our beans are roasted within 24-48 hours before shipping to ensure maximum freshness. Each package is sealed to preserve the aroma and flavor.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-left" data-delay="0.1">
+                    <div class="faq-question">
+                        <h3>Can I change my subscription plan?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade, downgrade, or change your subscription plan at any time through your account dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-left" data-delay="0.2">
+                    <div class="faq-question">
+                        <h3>What if I'm not home for delivery?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our packages are designed to fit in most mailboxes. If a signature is required, you can specify delivery instructions or reschedule through your account.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal-left" data-delay="0.3">
+                    <div class="faq-question">
+                        <h3>How do I pause or cancel my subscription?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can pause or cancel your subscription anytime through your account dashboard with no cancellation fees. Paused subscriptions can be resumed whenever you're ready.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Modal -->
+    <div class="modal" id="subscriptionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Subscribe to <span id="planName">Plan</span></h3>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <form id="subscriptionForm" class="subscription-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-input" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-input" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-input" required>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea class="form-input" rows="3" required></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Coffee Bean Preference</label>
+                        <select class="form-input" required>
+                            <option value="">Select Your Preference</option>
+                            <option value="house-blend">House Blend</option>
+                            <option value="dark-roast">Dark Roast</option>
+                            <option value="light-roast">Light Roast</option>
+                            <option value="espresso-blend">Espresso Blend</option>
+                            <option value="decaf">Decaf</option>
+                            <option value="surprise">Surprise Me</option>
+                        </select>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Grind Preference</label>
+                        <select class="form-input" required>
+                            <option value="">Select Grind Type</option>
+                            <option value="whole-bean">Whole Bean</option>
+                            <option value="coarse">Coarse (French Press)</option>
+                            <option value="medium">Medium (Drip Coffee)</option>
+                            <option value="fine">Fine (Espresso)</option>
+                            <option value="extra-fine">Extra Fine (Turkish)</option>
+                        </select>
+                        <span class="focus-border"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" id="closeSubscriptionBtn">Cancel</button>
+                <button class="btn primary-btn" id="confirmSubscriptionBtn">Confirm Subscription</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Subscription Confirmed!</h3>
+            <p>Thank you for subscribing to our coffee delivery service. Your first delivery will arrive soon!</p>
+            <button class="btn primary-btn" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Created By: Piyush, Lakshay, Parth, Piyush Prajapati, Jashan | © 2024 All Rights Reserved</p>
+            <div class="footer-beans">
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+    <script src="subscription.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip Smart - Daily Specials</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="daily-specials.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="coffee-icon">☕</span>Sip Smart
+            </a>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#menu" class="nav-link">Menu</a></li>
+                    <li><a href="daily-specials.html" class="nav-link active">Daily Specials</a></li>
+                    <li><a href="subscription.html" class="nav-link">Subscription</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="index.html#reservation" class="nav-link">Reservation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="login.html" class="nav-link">Sign Up</a></li>
+                    <li><button class="order-now-btn" id="orderNowBtn">Order Now</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Daily Specials Hero Section -->
+    <section class="specials-hero parallax-section">
+        <div class="container">
+            <div class="specials-hero-content reveal-text">
+                <div class="today-date" id="todayDate">Monday, April 28, 2025</div>
+                <h1>Today's <span class="highlight">Special</span> Blends</h1>
+                <p class="lead">Discover our daily selection of freshly roasted beans and limited-time offers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Bean Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bean of the Day</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="featured-bean reveal-scale">
+                <div class="bean-image">
+                    <img src="/placeholder.svg?height=400&width=400" alt="Ethiopian Yirgacheffe">
+                    <div class="bean-badge">Limited Edition</div>
+                </div>
+                <div class="bean-details">
+                    <h3>Ethiopian Yirgacheffe</h3>
+                    <div class="bean-origin">
+                        <span class="origin-label">Origin:</span>
+                        <span class="origin-value">Yirgacheffe, Ethiopia</span>
+                    </div>
+                    <div class="bean-profile">
+                        <div class="profile-item">
+                            <span class="profile-label">Roast Level:</span>
+                            <div class="profile-meter">
+                                <div class="meter-bar">
+                                    <div class="meter-fill" style="width: 40%;"></div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span>Light</span>
+                                    <span>Medium</span>
+                                    <span>Dark</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <span class="profile-label">Acidity:</span>
+                            <div class="profile-meter">
+                                <div class="meter-bar">
+                                    <div class="meter-fill" style="width: 70%;"></div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span>Low</span>
+                                    <span>Medium</span>
+                                    <span>High</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-item">
+                            <span class="profile-label">Body:</span>
+                            <div class="profile-meter">
+                                <div class="meter-bar">
+                                    <div class="meter-fill" style="width: 50%;"></div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span>Light</span>
+                                    <span>Medium</span>
+                                    <span>Full</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bean-flavor">
+                        <h4>Flavor Notes:</h4>
+                        <div class="flavor-tags">
+                            <span class="flavor-tag">Floral</span>
+                            <span class="flavor-tag">Citrus</span>
+                            <span class="flavor-tag">Bergamot</span>
+                            <span class="flavor-tag">Honey</span>
+                        </div>
+                    </div>
+                    <p class="bean-description">
+                        Our Ethiopian Yirgacheffe is a bright and complex coffee with floral and citrus notes. This light roast showcases the unique terroir of the Yirgacheffe region, known for producing some of the world's most distinctive coffees.
+                    </p>
+                    <div class="bean-price">
+                        <div class="price-container">
+                            <span class="regular-price">₹599</span>
+                            <span class="special-price">₹499</span>
+                            <span class="price-unit">/ 250g</span>
+                        </div>
+                        <button class="btn primary-btn add-to-cart-btn" data-item="Ethiopian Yirgacheffe" data-price="499">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Specials Section -->
+    <section class="section specials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Today's Special Offers</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+            </div>
+            
+            <div class="specials-container">
+                <div class="special-card reveal-left">
+                    <div class="special-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Iced Caramel Macchiato">
+                        <div class="special-discount">20% OFF</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Iced Caramel Macchiato</h3>
+                        <p>Our signature espresso with vanilla-flavored syrup, milk, ice and caramel sauce.</p>
+                        <div class="special-price">
+                            <span class="old-price">₹350</span>
+                            <span class="new-price">₹280</span>
+                        </div>
+                        <button class="btn primary-btn add-to-cart-btn" data-item="Iced Caramel Macchiato" data-price="280">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="special-card reveal-up">
+                    <div class="special-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Blueberry Muffin">
+                        <div class="special-discount">15% OFF</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Blueberry Muffin</h3>
+                        <p>Freshly baked muffin loaded with juicy blueberries and topped with sugar crystals.</p>
+                        <div class="special-price">
+                            <span class="old-price">₹200</span>
+                            <span class="new-price">₹170</span>
+                        </div>
+                        <button class="btn primary-btn add-to-cart-btn" data-item="Blueberry Muffin" data-price="170">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="special-card reveal-right">
+                    <div class="special-image">
+                        <img src="/placeholder.svg?height=300&width=300" alt="Breakfast Combo">
+                        <div class="special-discount">25% OFF</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Breakfast Combo</h3>
+                        <p>Any regular coffee with a sandwich or pastry of your choice.</p>
+                        <div class="special-price">
+                            <span class="old-price">₹450</span>
+                            <span class="new-price">₹338</span>
+                        </div>
+                        <button class="btn primary-btn add-to-cart-btn" data-item="Breakfast Combo" data-price="338">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Calendar Section -->
+    <section class="section calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">This Week's Specials</h2>
+                <div class="coffee-divider">
+                    <span class="coffee-bean">☕</span>
+                </div>
+                <p class="section-subtitle">Check out what's coming up this week!</p>
+            </div>
+            
+            <div class="weekly-calendar reveal-scale">
+                <div class="calendar-header">
+                    <div class="calendar-nav">
+                        <button class="calendar-nav-btn prev">❮</button>
+                        <h3 id="calendarTitle">April 28 - May 4, 2025</h3>
+                        <button class="calendar-nav-btn next">❯</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-body">
+                    <div class="calendar-day today">
+                        <div class="day-header">
+                            <span class="day-name">Monday</span>
+                            <span class="day-date">28</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Ethiopian Yirgacheffe</div>
+                            <div class="day-special">Iced Caramel Macchiato</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-header">
+                            <span class="day-name">Tuesday</span>
+                            <span class="day-date">29</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Colombian Supremo</div>
+                            <div class="day-special">Cinnamon Roll</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-header">
+                            <span class="day-name">Wednesday</span>
+                            <span class="day-date">30</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Sumatra Mandheling</div>
+                            <div class="day-special">Avocado Toast</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-header">
+                            <span class="day-name">Thursday</span>
+                            <span class="day-date">1</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Costa Rican Tarrazu</div>
+                            <div class="day-special">Chocolate Croissant</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day">
+                        <div class="day-header">
+                            <span class="day-name">Friday</span>
+                            <span class="day-date">2</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Kenyan AA</div>
+                            <div class="day-special">Fruit Parfait</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day weekend">
+                        <div class="day-header">
+                            <span class="day-name">Saturday</span>
+                            <span class="day-date">3</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Guatemala Antigua</div>
+                            <div class="day-special">Weekend Brunch Set</div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-day weekend">
+                        <div class="day-header">
+                            <span class="day-name">Sunday</span>
+                            <span class="day-date">4</span>
+                        </div>
+                        <div class="day-content">
+                            <div class="day-bean">Hawaiian Kona</div>
+                            <div class="day-special">Family Breakfast Bundle</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calendar-note reveal-up">
+                <p>* Specials are subject to availability. Please check with our staff for the latest offerings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Section -->
+    <section class="section notification-section">
+        <div class="container">
+            <div class="notification-container reveal-scale">
+                <div class="notification-icon">
+                    <span class="notification-emoji">🔔</span>
+                </div>
+                <div class="notification-content">
+                    <h3>Never Miss a Special!</h3>
+                    <p>Subscribe to our notifications to get daily updates on our special offers and new bean arrivals.</p>
+                    <form id="notificationForm" class="notification-form">
+                        <input type="email" placeholder="Your Email Address" class="notification-input" required>
+                        <button type="submit" class="notification-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Order</h3>
+                <span class="close-modal">×</span>
+            </div>
+            <div class="modal-body">
+                <div id="orderItems" class="order-items">
+                    <!-- Order items will be added here dynamically -->
+                </div>
+                <div class="order-total">
+                    <h4>Total:</h4>
+                    <h4 id="orderTotal">₹0.00</h4>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label>Delivery Address</label>
+                        <textarea class="form-input" rows="3" required></textarea>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-input" required>
+                        <span class="focus-border"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" id="closeOrderBtn">Close</button>
+                <button class="btn primary-btn" id="placeOrderBtn">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Order Placed Successfully!</h3>
+            <p>Your delicious coffee is on the way.</p>
+            <button class="btn primary-btn" id="closeSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Notification Success Modal -->
+    <div class="modal" id="notificationSuccessModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>Subscription Successful!</h3>
+            <p>You'll now receive updates about our daily specials and new bean arrivals.</p>
+            <button class="btn primary-btn" id="closeNotificationSuccessBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Created By: Piyush, Lakshay, Parth, Piyush Prajapati, Jashan | © 2024 All Rights Reserved</p>
+            <div class="footer-beans">
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+                <span class="footer-bean">☕</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+    <script src="daily-specials.js"></script>
+</body>
+</html>
