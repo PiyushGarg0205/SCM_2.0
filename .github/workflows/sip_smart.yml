@@ -1,4 +1,5 @@
 name: 🚀 Deploy & Validate Sip Smart Website
+
 on:
   push:
     branches:
@@ -6,7 +7,8 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch:  # <-- Added manual trigger option
+  workflow_dispatch:  # Manual trigger option
+
 jobs:
   greet-on-pr:
     name: "Greet on Pull Request"
@@ -15,15 +17,50 @@ jobs:
     steps:
       - name: Say thanks!
         run: echo "☕ Thank you for contributing to Sip Smart Coffee House Website!"
+
   validate-html:
     name: "Validate HTML Files"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Install Dependencies
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install HTML Validator
+        run: npm install -g html-validator-cli
+        
+      - name: Validate HTML Files
+        id: validate
         run: |
-          npm install -g html-validator-cli
-      - name: Find and Validate HTML Files
+          echo "::group::HTML Validation Results"
+          find . -name "*.html" -type f -print | while read file; do
+            echo "Validating $file..."
+            if ! html-validator --file "$file" --verbose; then
+              echo "::error file=$file::HTML validation failed for $file"
+              echo "$file" >> invalid_files.txt
+            fi
+          done
+          echo "::endgroup::"
+          
+          if [ -f invalid_files.txt ]; then
+            echo "❌ The following files have HTML validation errors:"
+            cat invalid_files.txt
+            exit 1
+          else
+            echo "✅ All HTML files are valid!"
+          fi
+        continue-on-error: true
+        
+      - name: Report Validation Status
+        if: always()
         run: |
-          find . -name "*.html" -type f | xargs -I{} html-validator --file {} --verbose
+          if [ "${{ steps.validate.outcome }}" == "failure" ]; then
+            echo "⚠️ HTML validation found errors. Please fix the issues before merging."
+            exit 1
+          else
+            echo "✅ HTML validation successful!"
+          fi
