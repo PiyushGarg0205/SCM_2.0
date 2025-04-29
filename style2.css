@@ -11,7 +11,7 @@
   --glass-border: rgba(255, 255, 255, 0.2);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  --border-radius: 16px;
+  --border-radius: 18px;
   --glow: 0 0 15px rgba(255, 123, 84, 0.5);
 }
 
@@ -54,7 +54,7 @@ ul {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 105px 0;
   position: relative;
 }
 
